@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Email Server - Inbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: black; /* Background color */
+            color: #ffffff; /* Text color */
+        }
+        h1 {
+            color: #ffffff; /* Heading text */
+        }
+        .email {
+            border: 1px solid #ffffff; /* Border color */
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .email:hover {
+            background-color: #ffcccc; /* Hover effect */
+        }
+        .actions {
+            margin-top: 5px;
+        }
+        button {
+            background-color: #333;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        #flag {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #00ff00; 
+        }
+    </style>
+    <script>
+        let totalEmails = 8; 
+        let emailsDeleted = 0;
+        const encodedFlag = "SUdOSVRFe0RJU1AwUzNfU0M0TU1ZX000SUx9";
+        function deleteEmail(emailElement) {
+            emailElement.parentElement.style.display = 'none';
+            emailsDeleted++;
+            if (emailsDeleted === totalEmails) {
+                
+                const decodedFlag = atob(encodedFlag);
+                document.getElementById('flag').textContent = `Flag: ${decodedFlag}`;
+            }
+        }
+
+        function archiveEmail() {
+            alert("Email archived!");
+        }
+
+        function pinEmail() {
+            alert("Email pinned!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Archive Inbox</h1>
+    <div class="email">
+        <a href="email1.html">Your password was found in a data breach! Change it NOW!</a>
+        <div class="actions">
+            <button onclick="deleteEmail(this)">Delete</button>
+            <button onclick="archiveEmail()">Archive</button>
+            <button onclick="pinEmail()">Pin</button>
+        </div>
+    </div>
+    <div class="email">
+        <a href="email2.html">Welcome to Fake Gmail!</a>
+        <div class="actions">
+            <button onclick="deleteEmail(this)">Delete</button>
+            <button onclick="archiveEmail()">Archive</button>
+            <button onclick="pinEmail()">Pin</button>
+        </div>
+    </div>
+    <div class="email">
+        <a href="email3.html">Newsletter: March Updates</a>
+        <div class="actions">
+            <button onclick="deleteEmail(this)">Delete</button>
+            <button onclick="archiveEmail()">Archive</button>
+            <button onclick="pinEmail()">Pin</button>
+        </div>
+    </div>
+    <div class="email">
+        <a href="email4.html">Suspicious Login Attempt Detected</a>
+        <div class="actions">
+            <button onclick="deleteEmail(this)">Delete</button>
+            <button onclick="archiveEmail()">Archive</button>
+            <button onclick="pinEmail()">Pin</button>
+        </div>
+    </div>
+    <div class="email">
+        <a href="email5.html">Limited-Time Offer: 80% Off Electronics!</a>
+        <div class="actions">
+            <button onclick="deleteEmail(this)">Delete</button>
+            <button onclick="archiveEmail()">Archive</button>
+            <button onclick="pinEmail()">Pin</button>
+        </div>
+    </div>
+    <div class="email">
+        <a href="email6.html">Reminder: Your Subscription Expires Soon</a>
+        <div class="actions">
+            <button onclick="deleteEmail(this)">Delete</button>
+            <button onclick="archiveEmail()">Archive</button>
+            <button onclick="pinEmail()">Pin</button>
+        </div>
+    </div>
+    <div class="email">
+        <a href="email7.html">Payment Confirmation for Order #12345</a>
+        <div class="actions">
+            <button onclick="deleteEmail(this)">Delete</button>
+            <button onclick="archiveEmail()">Archive</button>
+            <button onclick="pinEmail()">Pin</button>
+        </div>
+    </div>
+    <div class="email">
+        <a href="email8.html">Win a Free Trip! Participate Now</a>
+        <div class="actions">
+            <button onclick="deleteEmail(this)">Delete</button>
+            <button onclick="archiveEmail()">Archive</button>
+            <button onclick="pinEmail()">Pin</button>
+        </div>
+    </div>
+
+    <div id="flag"></div> 
+</body>
+</html>
